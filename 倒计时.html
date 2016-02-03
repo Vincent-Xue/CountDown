@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<bgsound url="bgmusic/09 Whispers in the Dark.mp3" loop="-1">
+<link rel="stylesheet" type="text/css" href="jquery.flipcountdown.css" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.flipcountdown.js"></script>
+<style>
+.body{
+     background:url(img/底板.jpg)  top center no-repeat;        background-size:cover;
+	 margin: 0; 
+	 overflow-style:auto; 
+	 overflow:hidden;
+
+}
+.welcome{
+	text-align:center;
+	position:absolute;
+	top:28%;
+	left:50%;
+	margin:0 0 0 -300px;
+}
+.timer{
+	text-align:center;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:40px 0 0 -230px;
+	}
+
+
+</style>
+
+
+</head>
+
+<body class=body>
+<div class="bg">
+
+</div>
+<div class="welcome">
+	<table style="border:0px;">	
+		<tr>
+			<td style="width:600px;text-align:center;font-size:70px;font-weight:bold; color:#FFF;">Coming soon</td>
+		</tr>
+	</table>
+    </div>
+<div class="timer">
+	<table style="border:0px;">	
+		<tr>
+			<td colspan="4"><span id="retroclockbox1"></span></td>
+		</tr>
+        <tr>
+			<td style="width:110px;text-align:center;font-size:25px;font-weight:bold; color:#FFF;">Days</td>
+			<td style="width:120px;text-align:center;font-size:25px;font-weight:bold;color:#FFF;">Hours</td>
+			<td style="width:110px;text-align:center;font-size:25px;font-weight:bold;color:#FFF;">Minutes</td>
+			<td style="width:120px;text-align:center;font-size:25px;font-weight:bold;color:#FFF;">Seconds</td>
+		</tr>
+	</table>
+    </div>
+<span id="show" style="color:#999;"></span>
+<img src="img/logo.gif" alt="logo" width="303" height="68"style="position: absolute;	top:20px; left:20px;">
+</div>
+ <script>
+	jQuery(function($){
+		$('#retroclockbox1').flipcountdown({
+			beforeDateTime:'2/4/2016 15:30:00'
+			
+		});
+	});
+	
+</script>
+<script> 
+var endDate=new Date(2016,1,4,15,30,01);
+var now=new Date();
+var oft=Math.round((endDate-now)/1000);
+var ofs=oft%60;
+//var t=ofs;//设定跳转的时间 
+setInterval("refer()",1000); //启动1秒定时 
+function refer(){ 
+if(oft==0){ 
+location="index1.html"; //#设定跳转的链接地址 	
+} 
+document.getElementById("show").innerHTML=oft;// 显示倒计时 
+oft--; // 计数器递减 
+//本文转自： 
+} 
+</script> 
+</body>
+</html>
